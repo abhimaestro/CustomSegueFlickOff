@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Card CoverVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardCoverVC" customModule="CustomSegueFlickOff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Cover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCD-cj-mxL">
+                                <rect key="frame" x="0.0" y="288" width="600" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="NLo-pO-dsi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lCD-cj-mxL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="15b-nY-4mN"/>
+                            <constraint firstItem="lCD-cj-mxL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZZS-Ib-WO5"/>
+                            <constraint firstAttribute="trailing" secondItem="lCD-cj-mxL" secondAttribute="trailing" id="czj-HI-uLc"/>
+                            <constraint firstItem="lCD-cj-mxL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hSd-VX-nfO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="crX-xL-keI" kind="custom" identifier="showStringSegue" customClass="FlickoffSegue" customModule="CustomSegueFlickOff" customModuleProvider="target" id="Za3-1B-Aqc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="231" y="377"/>
+        </scene>
+        <!--View StringVC-->
+        <scene sceneID="jv3-JK-ic3">
+            <objects>
+                <viewController id="crX-xL-keI" customClass="ViewStringVC" customModule="CustomSegueFlickOff" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1ra-jc-Kz3"/>
+                        <viewControllerLayoutGuide type="bottom" id="OaZ-be-yHk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="al5-iV-Tkh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="String" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sr3-y7-arc">
+                                <rect key="frame" x="0.0" y="281" width="600" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="b96-ed-Mjd"/>
+                                    <constraint firstAttribute="height" constant="25" id="hla-5f-ezZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="hla-5f-ezZ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZP-zH-jMD">
+                                <rect key="frame" x="301" y="530" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="crX-xL-keI" kind="custom" identifier="showNextStringSegue" customClass="FlickoffSegue" id="jAD-UX-2fO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sr3-y7-arc" firstAttribute="centerX" secondItem="al5-iV-Tkh" secondAttribute="centerX" id="6jv-9K-Nxf"/>
+                            <constraint firstAttribute="trailing" secondItem="sr3-y7-arc" secondAttribute="trailing" id="Lon-mb-g0f"/>
+                            <constraint firstItem="sr3-y7-arc" firstAttribute="leading" secondItem="al5-iV-Tkh" secondAttribute="leading" id="thT-LM-TNp"/>
+                            <constraint firstItem="sr3-y7-arc" firstAttribute="centerY" secondItem="al5-iV-Tkh" secondAttribute="centerY" id="zud-mq-JPy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="xOm-80-FYl" kind="unwind" identifier="showStringSegueUnwind" customClass="FlickoffSegueUnwind" customModule="CustomSegueFlickOff" customModuleProvider="target" unwindAction="returFromFlickoffSegue:" id="D43-im-W1U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bw2-II-uAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xOm-80-FYl" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="389"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Za3-1B-Aqc"/>
+    </inferredMetricsTieBreakers>
 </document>
